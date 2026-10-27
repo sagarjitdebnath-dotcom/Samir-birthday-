@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Samir!</title>
+<style>
+body {
+  margin: 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3, #7b2ff7);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.container { padding: 45px 15px; }
+h1 { font-size: 38px; }
+p { font-size: 20px; line-height: 1.6; }
+button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 25px;
+  font-size: 17px;
+  background: #fff;
+  color: #d63384;
+  margin: 10px;
+}
+.heart { font-size: 55px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="heart">🎂❤️🎈</div>
+  <h1>Happy Birthday, Samir Debnath!</h1>
+  <h2>🎉 To Our Wonderful Dadabhai 🎉</h2>
+  <p>
+    Wishing you a day filled with happiness, love and laughter!<br>
+    May all your dreams come true and may you always stay healthy,
+    successful and blessed.
+  </p>
+  <p>You're not just family, you're someone truly special. ❤️</p>
+  <h2>Lots of love from your family! 💖</h2>
+  <button onclick="celebrate()">Tap for a Surprise 🎁</button>
+  <p id="surprise"></p>
+</div>
+<script>
+function celebrate() {
+  document.getElementById("surprise").innerHTML =
+    "🎉🎊🎈 Happy Birthday, Dadabhai! 🎈🎊🎉<br>May your life always shine with happiness! ❤️";
+  for (let i = 0; i < 30; i++) {
+    let b = document.createElement("span");
+    b.innerHTML = ["🎈","🎉","💖","✨"][Math.floor(Math.random()*4)];
+    b.style.position = "fixed";
+    b.style.left = Math.random()*100 + "vw";
+    b.style.top = "-30px";
+    b.style.fontSize = "28px";
+    b.style.transition = "transform 3s linear";
+    document.body.appendChild(b);
+    setTimeout(() => {
+      b.style.transform = "translateY(110vh) rotate(360deg)";
+    }, 50);
+    setTimeout(() => b.remove(), 3200);
+  }
+}
+</script>
+</body>
+</html>
